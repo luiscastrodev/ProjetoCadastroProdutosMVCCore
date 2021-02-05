@@ -31,8 +31,9 @@
 
                     </ul>
                     @using Microsoft.AspNetCore.Identity
-                    @inject SignInManager<IdentityUser> SignInManager
-                    @inject UserManager<IdentityUser> UserManager
+                    @using ProjetoCadastroFuncionarios.Models
+                    @inject SignInManager<ApplicationUser> SignInManager
+                    @inject UserManager<ApplicationUser> UserManager
                     @if (SignInManager.IsSignedIn(User))
                     {
                         <li class="nav-item">

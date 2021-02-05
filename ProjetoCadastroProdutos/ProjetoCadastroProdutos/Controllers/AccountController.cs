@@ -12,10 +12,10 @@ namespace ProjetoCadastroFuncionarios.Controllers
     public class AccountController : Controller
     {
 
-        private readonly UserManager<IdentityUser> userManager;
-        private readonly SignInManager<IdentityUser> signInManager;
-        public AccountController(UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly SignInManager<ApplicationUser> signInManager;
+        public AccountController(UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -42,10 +42,12 @@ namespace ProjetoCadastroFuncionarios.Controllers
             if (ModelState.IsValid)
             {
                 // Copia os dados do RegisterViewModel para o IdentityUser
-                var user = new IdentityUser
+                var user = new ApplicationUser
                 {
                     UserName = model.Email,
-                    Email = model.Email
+                    Email = model.Email,
+                    Cidade = model.Cidade
+
                 };
                 // Armazena os dados do usuário na tabela AspNetUsers
                 var result = await userManager.CreateAsync(user, model.Password);

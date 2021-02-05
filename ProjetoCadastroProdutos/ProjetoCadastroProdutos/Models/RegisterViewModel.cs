@@ -21,5 +21,8 @@ namespace ProjetoCadastroFuncionarios.Models
         [Display(Name = "Confirme a senha")]
         [Compare("Password", ErrorMessage = "As senhas não conferem")]
         public string ConfirmPassword { get; set; }
+
+        public string Cidade { get; set; }
+
     }
 }

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProjetoCadastroFuncionarios.Context;
+using ProjetoCadastroFuncionarios.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace ProjetoCadastroProdutos
             });
 
             //adicionando identity no projeto
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                          .AddEntityFrameworkStores<AppDbContext>();
 
             //Aplicando o atributo Authorize globalmente
