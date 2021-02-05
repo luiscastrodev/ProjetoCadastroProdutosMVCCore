@@ -45,11 +45,21 @@
                             </form>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Adminstration" asp-action="ListRoles">
-                                Roles
-                            </a>
-                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Gerenciar
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" asp-controller="Adminstration"
+                                       asp-action="ListUsers">Usuários</a>
+                                    <a class="dropdown-item" asp-controller="Adminstration"
+                                       asp-action="ListRoles">Roles</a>
+                                </div>
+                            </li>
+                        }
                     }
                     else
                     {

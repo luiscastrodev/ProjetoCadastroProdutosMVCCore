@@ -55,6 +55,14 @@ namespace ProjetoCadastroFuncionarios.Controllers
                 // usando o serviço SignInManager e redireciona para o Método Action Index
                 if (result.Succeeded)
                 {
+                    // Se o usuário estiver logado e for do perfil Admin
+                    // então o usuário é o usuário Admin que esta criando
+                    // um novo usuário, assim vamos direcioná-lo para o
+                    // usuário Admin para a Action ListRoles
+                    if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        return RedirectToAction("ListUsers", "Adminstration");
+                    }
                     await signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("index", "home");
                 }

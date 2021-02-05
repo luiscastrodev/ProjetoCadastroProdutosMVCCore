@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -47,6 +48,11 @@ namespace ProjetoCadastroProdutos
             services.AddIdentity<ApplicationUser, IdentityRole>()
                          .AddEntityFrameworkStores<AppDbContext>();
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = new PathString("/Home/AccessDenied");
+            });
+
             //Aplicando o atributo Authorize globalmente
             services.AddControllersWithViews(config =>
             {
@@ -55,6 +61,8 @@ namespace ProjetoCadastroProdutos
                        .Build();
                 config.Filters.Add(new AuthorizeFilter(policy));
             });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
