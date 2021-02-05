@@ -187,3 +187,5 @@ D:\src\Projetos\ProjetoCadastroProdutosMVCCore\ProjetoCadastroProdutos\ProjetoCa
 D:\src\Projetos\ProjetoCadastroProdutosMVCCore\ProjetoCadastroProdutos\ProjetoCadastroProdutos\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
 D:\src\Projetos\ProjetoCadastroProdutosMVCCore\ProjetoCadastroProdutos\ProjetoCadastroProdutos\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
 D:\src\Projetos\ProjetoCadastroProdutosMVCCore\ProjetoCadastroProdutos\ProjetoCadastroProdutos\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+D:\src\Projetos\ProjetoCadastroProdutosMVCCore\ProjetoCadastroProdutos\ProjetoCadastroProdutos\obj\Debug\netcoreapp3.1\Razor\Views\Adminstration\CreateRole.cshtml.g.cs
+D:\src\Projetos\ProjetoCadastroProdutosMVCCore\ProjetoCadastroProdutos\ProjetoCadastroProdutos\obj\Debug\netcoreapp3.1\Razor\Views\Adminstration\ListRoles.cshtml.g.cs
