@@ -54,9 +54,11 @@
                 <h5 class="card-title">Sem roles</h5>
             }
         </div>
+
         <div class="card-footer">
-            <a href="#" style="width:auto" class="btn btn-primary">
-                Gerencia Roles
+            <a asp-action="ManageUserRoles" asp-route-userId="@Model.Id"
+               class="btn btn-primary">
+                Gerenciar Roles
             </a>
         </div>
     </div>

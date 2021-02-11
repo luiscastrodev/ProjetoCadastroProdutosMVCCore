@@ -15,5 +15,20 @@ namespace ProjetoCadastroFuncionarios.Context
       : base(options)
         { }
         public DbSet<Funcionario> Funcionarios { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<ApplicationUser>(b =>
+            {
+                // Each User can have many UserClaims
+                b.HasMany(e => e.Claims)
+                    .WithOne()
+                    .HasForeignKey(uc => uc.UserId)
+                    .IsRequired();
+            });
+        }
     }
 }
