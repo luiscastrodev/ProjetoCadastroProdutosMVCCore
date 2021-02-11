@@ -79,9 +79,11 @@
                 <h5 class="card-title">Sem claims</h5>
             }
         </div>
+
         <div class="card-footer">
-            <a href="#" style="width:auto" class="btn btn-primary">
-                Gerencia Claims
+            <a asp-action="ManageUserClaims" asp-route-userId="@Model.Id"
+               class="btn btn-primary">
+                Gerenciar Claims
             </a>
         </div>
     </div>

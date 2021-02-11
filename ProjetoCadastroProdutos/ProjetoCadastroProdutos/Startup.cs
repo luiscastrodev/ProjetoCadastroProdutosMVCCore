@@ -53,6 +53,12 @@ namespace ProjetoCadastroProdutos
                 options.AccessDeniedPath = new PathString("/Home/AccessDenied");
             });
 
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminRolePolicy", policy => policy.RequireRole("Admin,Gerente"));
+            });
+
             //Aplicando o atributo Authorize globalmente
             services.AddControllersWithViews(config =>
             {

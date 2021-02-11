@@ -9,7 +9,7 @@ namespace ProjetoCadastroFuncionarios.Models
     public class ApplicationUser : IdentityUser
     {
         public string Cidade { get; set; }
-        public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
+       // public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
 
     }
 }

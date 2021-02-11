@@ -21,6 +21,7 @@ namespace ProjetoCadastroFuncionarios.Context
         {
             base.OnModelCreating(modelBuilder);
 
+            /* ver depois para carregar claims do usuario lazyload
             modelBuilder.Entity<ApplicationUser>(b =>
             {
                 // Each User can have many UserClaims
@@ -28,7 +29,7 @@ namespace ProjetoCadastroFuncionarios.Context
                     .WithOne()
                     .HasForeignKey(uc => uc.UserId)
                     .IsRequired();
-            });
+            });*/
         }
     }
 }
